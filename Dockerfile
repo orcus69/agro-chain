@@ -3,7 +3,7 @@ FROM ubuntu
 ENV NODE_VERSION 14
 ENV INSTALL_PATH /app
 
-RUN apt-get update -qq && apt-get install -y curl wget && apt-get install git
+RUN apt-get update -qq && apt-get install -y curl wget
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
@@ -13,7 +13,6 @@ RUN mkdir -p $INSTALL_PATH
 
 RUN npm install -g ganache-cli
 RUN npm install -g truffle
-RUN npm install -g @openzeppelin/cli
 
 
 WORKDIR $INSTALL_PATH

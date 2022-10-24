@@ -1,8 +1,8 @@
 ##How to run docker container
 
 1. Build docker image
-```docker build -t <image_name> .```
+``` docker-compose up -d --build```
 2. Access to docker container
-```docker container run -it <image_name> /bin/bash```
+```docker exec -it <image_name> bash```
 3. Run all the test cases
 ```truffle test ./test/<test_name>.test.js```
