@@ -22,18 +22,13 @@ contract AgroChainToken is ERC721URIStorage, Ownable {
         string tokenURI;
     }
 
-    constructor() ERC721(NAME, SYMBOL) {
-
-    }
+    constructor() ERC721(NAME, SYMBOL) {}
 
     //mint NFT to recipient address
     //obs only owner can mint
-    function mintAGR(address recipient)
-        public onlyOwner
-        returns (uint256)
-    {
+    function mintAGR(address recipient) public onlyOwner returns (uint256) {
         _tokenIds.increment();
-
+        
         uint256 newItemId = _tokenIds.current();
         _mint(recipient, newItemId);
 
